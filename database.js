@@ -9,6 +9,7 @@ const db = new Sequelize(
   dbConfig.password,
   {
     host: dbConfig.host,
+    port: dbConfig.port,
     dialect: 'mysql',
   }
 );
