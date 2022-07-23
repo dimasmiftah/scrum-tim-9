@@ -1,11 +1,80 @@
 <%- include('./includes/header'); %>
 
-  <div class="container">
-    <h2>
-      <%= name %>
-    </h2>
+ 
 
-    <a href="/posts" class="btn btn-primary">Posts</a>
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-black rounded bg-dark" style="background: url(https://images.unsplash.com/photo-1555899434-94d1368aa7af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+    
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-black fw-bold">Continue reading...</a></p>
+    </div>
   </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Bangunan Khas</strong>
+          <h3 class="mb-0">Monumen Nasional</h3>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+
+          <svg width="200" height="200"
+  xmlns="http://www.w3.org/2000/svg">
+  <image href="https://images.unsplash.com/photo-1611637405506-e6e6ca710362?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" height="100%" width="100%"/>
+</svg>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Fashion</strong>
+          <h3 class="mb-0">Citayam Fashion Week</h3>
+          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg width="200" height="200"
+  xmlns="http://www.w3.org/2000/svg">
+  <image href="https://asset.kompas.com/crops/xWEuVz-eu86aLke2FlsJqakAYFA=/57x38:681x454/750x500/data/photo/2022/07/22/62da7e4d82bd3.jpg" height="100%" width="100%"/>
+</svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        PROVINSI DKI JAKARTA
+      </h3>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">Deskripsi</h2>
+        <p class="blog-post-meta"><a href="#"></a></p>
+
+        <p>Provinsi DKI Jakarta mempunyai luas daratan 661,52 km2 dan lautan seluas 6.977,5 km2 serta tercatat ±110 pulau yang tersebar di Kepulauan Seribu. Secara administrasi, Provinsi DKI Jakarta terbagi menjadi 5 wilayah Kotamadya dan 1 Kabupaten Administrasi yaitu Jakarta Pusat dengan luas daratan 47,90 km2; Jakarta Utara dengan luas daratan 154,01 km2, Jakarta Barat dengan luas daratan 126,15 km2; Jakarta Selatan dengan luas daratan 145,73 km2; Jakarta Timur dengan luas daratan 187,73 km2 dan Kabupaten Adm. Kepulauan Seribu.</p>
+        <hr>
+        <p>Jumlah penduduk Provinsi DKI Jakarta 9,041 juta jiwa dengan kepadatan penduduk 13.667,01 jiwa per km2. Jakarta beriklim tropis, dengan suhu tahunan rata-rata 27°C dengan kelembaban 80-90%. Karena terletak di dekat garis khatulistiwa, arah angin dipengaruhi oleh angin musim. Angin musim barat bertiup antara November dan April, sedang angin musim timur antara Mei dan Oktober. Curah hujan rata-rata 2.000 mm, curah hujan paling besar sekitar bulan Januari dan paling kecil pada bulan September. Sumber : https://jakarta.bpk.go.id/pemerintah-provinsi-dki-jakarta/</p>
+      </article>
+    </div>
+
+    <!--Google map-->
+<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.478949799!2d106.829518!3d-6.2297465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1658548649824!5m2!1sid!2sid" frameborder="0"
+    style="border:0" allowfullscreen></iframe>
+</div>
+
+<!--Google Maps-->
+
+</main>
+
+
 
   <%- include('./includes/footer'); %>
