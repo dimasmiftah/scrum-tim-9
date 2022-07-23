@@ -5,6 +5,6 @@ module.exports = {
     port: 3306,
     username: 'root',
     password: null,
-    database: 'scrum'
-  }
-}
+    database: 'scrum',
+  },
+};
