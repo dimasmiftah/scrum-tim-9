@@ -14,7 +14,7 @@ const db = require("./configs/database");
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cookieParser());
@@ -48,6 +48,18 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/login", loginRoutes);
 app.use("/register", registerRoutes);
 app.use("/", appRoutes);
+
+db.authenticate()
+  .then(() => console.log("[DB] Connection has been established successfully."))
+  .catch((error) =>
+    console.error("[DB] Unable to connect to the database:", error)
+  );
+
+db.sync({
+  alter: true,
+})
+  .then(() => console.log("[DB] Database synced successfully."))
+  .catch((error) => console.error("[DB] Error:", error));
 
 app.listen(config.port, () => {
   console.log("Server is running on port " + config.port);

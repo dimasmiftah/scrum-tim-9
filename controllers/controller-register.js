@@ -1,4 +1,5 @@
 const config = require("../configs/database");
+const User = require("../models/User");
 let mysql = require("mysql");
 let pool = mysql.createPool(config);
 
@@ -12,29 +13,19 @@ module.exports = {
       url: "http://localhost:3000/",
     });
   },
-  saveRegister(req, res) {
+
+  saveRegister: async (req, res) => {
     let username = req.body.username;
     let email = req.body.email;
     let password = req.body.pass;
-    if (username && email && password) {
-      pool.getConnection(function (err, connection) {
-        if (err) throw err;
-        connection.query(
-          `INSERT INTO user (username,email,password) VALUES (?,?,?);`,
-          [username, email, password],
-          function (error, results) {
-            if (error) throw error;
-            req.flash("color", "success");
-            req.flash("status", "Yes..");
-            req.flash("message", "Registrasi berhasil");
-            res.redirect("/login");
-          }
-        );
-        connection.release();
-      });
-    } else {
-      res.redirect("/login");
-      res.end();
-    }
+    await User.create({
+      username: username,
+      email: email,
+      password: password,
+    });
+    req.flash("color", "success");
+    req.flash("status", "Yes..");
+    req.flash("message", "Registrasi berhasil");
+    res.redirect("/login");
   },
 };
