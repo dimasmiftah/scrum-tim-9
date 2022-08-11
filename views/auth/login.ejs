@@ -1,0 +1,70 @@
+<%- include('../includes/header'); %>
+
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+</style>
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+    <form action="<%= url %>login/auth" method="POST">
+      <img
+        class="mb-4"
+        src="https://logodix.com/logo/1713924.png"
+        alt=""
+        width="122"
+        height="122"
+      />
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="floatingInput"
+          name="email"
+          placeholder="Masukan Email"
+          required
+        />
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          name="pass"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          required
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+      <a href="<%= url %>register" class="w-100 btn btn-lg btn-success mt-1"
+        >Register</a
+      >
+
+      <%if (pesanFlash) { %>
+      <div
+        class="alert alert-<%= colorFlash %> alert-dismissible fade show mt-3"
+        role="alert"
+      >
+        <strong><%= statusFlash %></strong>
+        <%= pesanFlash %>
+      </div>
+      <% } %>
+      <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+    </form>
+  </main>
+</body>

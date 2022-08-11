@@ -1,16 +1,16 @@
-const Post = require('../models/Post');
+const Post = require("../models/Post");
 
 module.exports = {
   index: async (req, res) => {
     const posts = await Post.findAll();
 
-    return res.render('post/index', {
+    return res.render("post/index", {
       posts,
     });
   },
 
   create: async (req, res) => {
-    return res.render('post/create');
+    return res.render("post/create");
   },
 
   store: async (req, res) => {
@@ -19,17 +19,17 @@ module.exports = {
       content: req.body.content,
     });
 
-    return res.redirect('/posts');
+    return res.redirect("/posts");
   },
 
   edit: async (req, res) => {
     const post = await Post.findByPk(req.params.id);
 
     if (!post) {
-      return res.redirect('/posts');
+      return res.redirect("/posts");
     }
 
-    return res.render('post/edit', {
+    return res.render("post/edit", {
       post,
     });
   },
@@ -38,7 +38,7 @@ module.exports = {
     const post = await Post.findByPk(req.params.id);
 
     if (!post) {
-      return res.redirect('/posts');
+      return res.redirect("/posts");
     }
 
     await post.update({
@@ -46,18 +46,18 @@ module.exports = {
       content: req.body.content,
     });
 
-    return res.redirect('/posts');
+    return res.redirect("/posts");
   },
 
   destroy: async (req, res) => {
     const post = await Post.findByPk(req.params.id);
 
     if (!post) {
-      return res.redirect('/posts');
+      return res.redirect("/posts");
     }
 
     await post.destroy();
 
-    return res.redirect('/posts');
+    return res.redirect("/posts");
   },
 };
